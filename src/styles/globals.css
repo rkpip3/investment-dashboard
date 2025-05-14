@@ -1,0 +1,521 @@
+/* /Users/raghav/Desktop/arTea/style.css */
+
+/*───────────────────────────────────────────────────
+  0. Load Gilroy fonts
+───────────────────────────────────────────────────*/
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-SemiBold';
+    src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Gilroy-Regular', sans-serif;
+    background: #171616;
+    color: #EEE;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*───────────────────────────────────────────────────
+  1. Reset & Base
+───────────────────────────────────────────────────*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Gilroy-Regular', sans-serif;
+    background: #171616;
+    color: #EEE;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*───────────────────────────────────────────────────
+  2. Header
+───────────────────────────────────────────────────*/
+header {
+    display: flex;
+    align-items: center;
+    background: #1b1a1a;
+    padding: 0.05rem 1.5rem;
+    box-shadow: 0px 3px 11px 2px #0c0c0c6e;
+    z-index: 1;
+}
+
+.logo {
+    font-family: 'Gilroy-SemiBold';
+    font-size: 1.5rem;
+    color: #00aaff;
+}
+
+.logo img {
+    width: 20px;
+    margin-top: 7px;
+    margin-left: 20px;
+}
+
+header nav {
+    margin-left: calc(9.6% + 2rem - 1.5rem);
+}
+
+nav a {
+    font-size: 14px;
+    color: #888;
+    text-decoration: none;
+    padding: 0.85rem 0.25rem 1.05rem 0.05rem;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+nav a.active {
+    font-family: 'Gilroy-SemiBold';
+    color: #FFF;
+    border-bottom: 2px solid #00aaff;
+}
+
+.icons {
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+.icons .btn-primary-btn {
+    width: 50px;
+    font-size: 16px;
+    color: #888;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.icons .btn-primary-btn:hover {
+    color: #d5d5d5;
+}
+
+.serch-icon {
+    position: relative;
+}
+
+.serch-icon::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background-color: #F44336;
+    position: absolute;
+    border-radius: 50%;
+    left: 60%;
+    top: -15%;
+}
+
+/*───────────────────────────────────────────────────
+  3. Layout & Tabs
+───────────────────────────────────────────────────*/
+main {
+    display: flex;
+    flex: 1;
+}
+
+aside {
+    background: #1b1a1a;
+    width: 200px;
+    padding: 2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tab {
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    color: #EEE;
+    padding: 0.75rem;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tab:hover,
+.tab.active {
+    font-family: 'Gilroy-SemiBold';
+    background: #3d3d3d;
+}
+
+/*───────────────────────────────────────────────────
+  4. Dashboard & Cards
+───────────────────────────────────────────────────*/
+.dashboard {
+    flex: 1;
+    padding: 2rem;
+}
+
+.dashboard h2 {
+    font-family: 'Gilroy-SemiBold';
+    font-size: 24px;
+}
+
+.subhead {
+    margin-top: 0.5rem;
+    font-size: 16px;
+    color: #AAA;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.card {
+    background: #0f2341;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    background: #1e3962;
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-family: 'Gilroy-SemiBold';
+    font-size: 16px;
+    margin-left: 13px;
+}
+
+.positive {
+    color: #4caf50;
+}
+
+.negative {
+    color: #f44336;
+}
+
+/* summary-cards detail */
+.summary-cards .names-values {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.summary-cards .names-values::before {
+    content: "";
+    width: 2px;
+    height: 40px;
+    background-color: #b2efff;
+}
+
+.names-values-title {
+    width: 64%;
+    line-height: 20px !important;
+}
+
+.retunr-small-text {
+    font-size: 9px !important;
+}
+
+/*───────────────────────────────────────────────────
+  5. Performance Tabs & Chart
+───────────────────────────────────────────────────*/
+.performance-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid #3a3939;
+    margin-bottom: 2rem;
+}
+
+.performance-tabs button {
+    background: none;
+    border: none;
+    padding: 16px 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: #DDD;
+    width: 19%;
+    position: relative;
+}
+
+#tab-metrics {
+    font-family: 'Gilroy-SemiBold';
+    color: #FFF;
+}
+
+.performance-tabs button.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #00aaff;
+}
+
+.performance-summary {
+    margin-top: 1rem;
+}
+
+.info-box {
+    background: #262626;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.info-box h3 {
+    font-family: 'Gilroy-SemiBold';
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+/* Filters */
+.time-filters-container {
+    background-color: #1b1a1a;
+    border-radius: 8px;
+    padding: 30px 40px;
+    box-shadow: 0 0 13px #0b0b0b30;
+}
+
+.time-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.time-filters button {
+    background: #1e1e1e;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: #CCC;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.time-filters button.active {
+    background: #00aaff;
+    color: #FFF;
+    font-family: 'Gilroy-SemiBold';
+}
+
+/*───────────────────────────────────────────────────
+  6. Portfolio Composition
+───────────────────────────────────────────────────*/
+.portfolio-composition-container {
+    background: #1b1a1a;
+    padding: 1.9rem;
+    border-radius: 8px;
+    box-shadow: 0 0 13px #0b0b0b30;
+}
+
+.portfolio-composition-container h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.sector-grid {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sector-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: #1b1a1a;
+    cursor: pointer;
+}
+
+.sector-card .name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.sector-card .amount {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.sector-card .pct {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10%;
+    text-align: right;
+}
+
+/*───────────────────────────────────────────────────
+  7. Overlap Analysis
+───────────────────────────────────────────────────*/
+.overlap-analysis-section {
+    background: #1b1a1a;
+    border-radius: 8px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 13px #0b0b0b30;
+}
+
+.overlap-analysis-section h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.overlap-analysis-section h3 {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.overlap-analysis-section .info {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.overlap-analysis-section .info p {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.overlap-analysis-section .info p strong {
+    font-family: 'Gilroy-SemiBold';
+    margin-right: 4px;
+}
+
+.overlap-analysis-section .info p::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #FFF;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+#overlap-sankey {
+    width: 100%;
+    height: 300px;
+}
+
+/* ================= */
+
+/* make the hover screen a full-width flex container */
+.sector-card-hover-screen {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 4px;
+    display: none;
+    border-radius: 9px;
+}
+
+/* each little box gets its own flex-basis and a separator */
+.card-hover-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    align-items: stretch;
+    flex-direction: column;
+    background-color: #708dad;
+}
+
+/* no divider on the last one */
+.card-hover-container:last-child {
+    border-right: none;
+}
+
+.sector-financial:hover {
+    background-color: transparent;
+    padding: 0px;
+}
+
+.sector-financial:hover .first-container {
+    display: none;
+}
+
+
+.sector-financial:hover .sector-card-hover-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sector-card .pct-small {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+.sector-card .name-small {
+    margin-top: 2.7%;
+    font-size: 0.8rem;
+}
+
+.sector-card .amount-small {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.summary-card-icon {
+    margin-right: 5px;
+}
+
+.sector-grid .sector-card.active:hover {
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+
+.sector-grid .sector-card.active:hover .first-container {
+    display: none;
+}
+
+.sector-grid .sector-card.active:hover .sector-card-hover-screen {
+    display: flex;
+}
