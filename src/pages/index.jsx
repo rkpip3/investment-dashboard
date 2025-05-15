@@ -16,7 +16,7 @@ export default function Home() {
         <ErrorBoundary>
             <main className="layout">
                 <section className="dashboard">
-                    <h2>Good morning, Yashna test!</h2>
+                    <h2>Good morning, Yashna!</h2>
                     <p className="subhead">Evaluate Your Investment Performance</p>
                     <SummaryCards />
                     <div className="performance-tabs">

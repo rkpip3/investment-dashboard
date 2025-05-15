@@ -14,9 +14,7 @@ export default function App({ Component, pageProps }) {
 
                 <main className="layout">
                     <Sidebar />
-                    <section className="dashboard">
                         <Component {...pageProps} />
-                    </section>
                 </main>
             </ErrorBoundary>
         </Provider>
