@@ -74,6 +74,8 @@ investment-dashboard/
    npm run dev
    ```
 
+
+   Open [https://investment-dashboard-dun.vercel.app/](https://investment-dashboard-dun.vercel.app/)(Live Demo) in your browser.
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 4. **Build for production**
